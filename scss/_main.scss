@@ -1,0 +1,345 @@
+.header {
+    h1 {
+        margin-left: 16px;
+
+        @media (max-width:920px) {
+            margin: 0;
+        }
+    }
+}
+
+%title {
+    text-align: center;
+    color: #09777d;
+}
+
+.content-title {
+    h2 {
+        @extend %title;
+        margin-top: 6rem;
+    }
+
+    p {
+        @extend %title;
+        margin-top: 0.5rem;
+    }
+}
+
+.about-item {
+    margin: 5rem auto;
+    width: 1200px;
+    max-width: 100%;
+
+    .card {
+        display: flex;
+        margin-top: 3rem;
+        position: relative;
+
+        .card-pic {
+            flex: 60% 1 0;
+            overflow: hidden;
+            border-radius: 10px;
+
+            img {
+                width: 100%;
+            }
+
+            &::after {
+                content: "";
+                width: 60%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                background-color: rgba($primary-variant, 0.5);
+                z-index: -1;
+                top: 30px;
+                left: -30px;
+            }
+        }
+
+        +.row-reverse .card-pic::after {
+            left: inherit;
+            right: -30px;
+        }
+
+        .card-body {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h2 {
+                @extend %title;
+            }
+
+            p {
+                margin: 1rem auto;
+                font-size: 1.2rem;
+                color: #555;
+            }
+        }
+
+        @include rwd-xl {
+            width: 95%;
+            margin: 3rem auto;
+        }
+
+        @include rwd-md {
+            .card-pic {
+                display: none;
+            }
+
+            .card-body {
+                h2 {
+                    font-size: 1.3rem;
+                }
+
+                p {
+                    margin: 0.5rem 0;
+                    line-height: 1.5;
+                    font-size: 1rem;
+                    text-align-last: left;
+                }
+            }
+        }
+    }
+
+    .card-logo {
+        display: none;
+        border-radius: 10px;
+        overflow: hidden;
+
+        img {
+            width: 110%;
+            transition: all 0.5s;
+
+            &:hover {
+                transform: scale(0.9);
+            }
+        }
+
+        @include rwd-md {
+            display: block;
+            width: 85%;
+            margin: auto;
+        }
+    }
+}
+
+.backWapper {
+    background-image: url('../images/Pictures/pexels-photo-416676.jpeg');
+    width: 100%;
+    min-height: 90vh;
+    background-size: cover;
+    background-position: center;
+
+    .filter {
+        background-color: rgba($dark, 0.2);
+        width: 100%;
+        min-height: 90vh;
+        // position:absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+
+        h2 {
+            color: #fff;
+            line-height: 1.5;
+            font-size: 3.5rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .btn {
+            margin-top: 1.5rem;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.index-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+
+    .card {
+        padding: 1rem;
+        text-align: center;
+        max-width: 30%;
+        margin: auto;
+
+        // border: 1px solid #000;
+        // flex: 0 0 33%;
+        .pic {
+            border: 1px solid rgba($dark, 0.1);
+            border-radius: 50%;
+            width: 15vw;
+            height: 15vw;
+            transition: all 0.5s;
+        }
+
+        .pic:hover {
+            transform: scale(1.2);
+        }
+
+        p {
+            font-size: 20px;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 1.75rem;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            margin-top: 1.25rem;
+            font-size: 20px;
+        }
+
+        @media (max-width:920px) {
+            margin-bottom: 24px;
+            max-width: 33%;
+            align-content: center;
+
+            .pic {
+                width: 20vh;
+                height: 20vh;
+            }
+        }
+
+        @media (max-width:768px) {
+            max-width: 100%;
+
+            .pic {
+                width: 25vh;
+                height: 25vh;
+            }
+        }
+    }
+}
+
+.contact-form {
+    width: 900px;
+    padding: 1rem;
+    margin: auto;
+
+    .contact-from-list {
+        padding: 3rem 1rem;
+        display: flex;
+        border-bottom: 1px solid #ddd;
+
+        h4 {
+            flex: 20% 1 0;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        input {
+            flex: 75% 1 0;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+
+            &:hover {
+                box-shadow: 1 1 0 15 rgba($primary-variant, 1);
+            }
+        }
+    }
+
+    .contact-form-btn {
+        border: none;
+
+        .btn-shape {
+            border: none;
+            @include shape-btn($primary-variant);
+            margin: auto;
+            width: 300px;
+        }
+    }
+
+}
+
+.news-body{
+    background-color: rgba($primary-variant, 0.1);
+}
+.news-main {
+    max-width: 1200px;
+    margin: 3.5rem auto;
+    .news-title {
+        text-align-last: left;
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        +.content-title {
+            h2 {
+                @extend %title;
+                margin-top: 0;
+            }
+        }
+    }
+    
+    .news-cards {
+        padding: 1rem;
+        background: #fff;
+        border-radius: 5px;
+        width: 80%;
+        margin: 1rem auto;
+        a {
+            color: #000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            .card-pic {
+                flex: 30% 0 0;
+
+                img {
+                    width: 100%;
+                    border-radius: 5px;
+                }
+            }
+
+            .card-body {
+                padding: 1rem;
+
+                .card-body-title {
+                    color: $primary;
+
+                    &::before {
+                        content: "2022.10.26";
+                        display: block;
+                        font-size: 14px;
+                        color: #aaa;
+                        margin-bottom: 0.25rem;
+                    }
+                }
+
+                p {
+                    padding: 1rem 0;
+                }
+            }
+
+            @include rwd-md {
+                flex-direction: column;
+                padding: 0.5rem;
+                width: 70%;
+                .card-pic {
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .card-body {
+                    margin-top: 1rem;
+                    padding: 0.5rem;
+                }
+            }
+        }
+        &:hover{
+            outline: solid #999;
+        }
+    }
+}

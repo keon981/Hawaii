@@ -1,0 +1,76 @@
+h1,h2,h3,h4,h5,h6{
+    font-weight: 500;
+}
+h1{
+    font-size: 2.25rem;
+    
+    display: flex;
+    align-items: center;
+    .logo{
+        width: 6vw;
+        height: 6vw;
+    }
+}
+h2{
+   
+    font-size: 2rem;
+}
+h3{
+    font-size: 1.75rem;
+}
+h4{
+    font-size: 1.5rem;
+}
+// 按鈕
+.btn{
+    padding: 0.75rem 1.5rem;
+    color: #000;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover{
+        position: relative;
+        top: -7px;
+    }
+}
+.btn-primary{
+    color: #fff;
+    background-color: #09777d;
+}
+.btn-second{
+    color: #fff;
+    background-color: #3bf0e5;
+    border-color: #3bf0e5;
+
+}
+
+// 間隔
+.my-3{
+    margin: 1rem 0;
+}
+.my-4{
+    margin: 1.5rem 0;
+}
+.my-5{
+    margin: 2rem 0;
+}
+
+//flex
+.d-flex{
+    display: flex;
+}
+.row-reverse{
+    flex-direction: row-reverse;
+}
+.column-reverse{
+    flex-direction: column-reverse;
+}
+
+//border
+%border-black{
+    border: 1px solid #000;
+}
+.border-1{
+    border: 1px solid #000;
+}
