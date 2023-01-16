@@ -146,6 +146,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 5;
+  transition: all 0.4s;
 }
 .header .header_nav {
   display: flex;
